@@ -1,1 +1,81 @@
+* { box-sizing: border-box; }
+body, h1, p, ul { margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.35rem;
+}
+
+.tagline {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.about {
+  margin: 1rem auto 1.5rem;
+}
+
+.links ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 1.25rem 0 2rem;
+}
+
+.links a {
+  display: block;
+  padding: 10px 12px;
+  border: 1px solid #e6e8ec;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  background: #f3f6ff;
+  border-color: #d7e3ff;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid #2f6feb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.button:hover {
+  background: #eaf0ff;
+}
+
+.hint {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+footer {
+  margin-top: 2rem;
+  color: #777;
+  font-size: 0.95rem;
+}
 

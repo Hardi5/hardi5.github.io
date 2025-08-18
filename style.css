@@ -18,6 +18,13 @@ body {
   text-align: center;
 }
 
+/* Logo styling */
+.logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
 header h1 {
   font-size: 2.2rem;
   margin-bottom: 0.35rem;
@@ -78,4 +85,3 @@ footer {
   color: #777;
   font-size: 0.95rem;
 }
-

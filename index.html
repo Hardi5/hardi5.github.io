@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hi, I'm Your Name</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* You can keep CSS here or in style.css */
-    body {
-      font-family: sans-serif;
-      max-width: 600px;
-      margin: 50px auto;
-      padding: 0 1rem;
-      line-height: 1.6;
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 0.5rem;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin: 0.5rem 0;
-    }
-    a {
-      text-decoration: none;
-      color: #0366d6;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Hardi Kakalaw</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Hardi Kakalaw — developer & consultant." />
 </head>
 <body>
-  <h1>Hello, I'm Your Name 👋</h1>
-  <p>A short tagline about you (e.g. developer, researcher, student).</p>
+  <div class="container">
+    <header>
+      <h1>👋 Hi, I'm Hardi</h1>
+      <p class="tagline">Developer • Consultant</p>
+    </header>
 
-  <h2>Find me here:</h2>
-  <ul>
-    <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
-    <li><a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></li>
-    <li><a href="YourCV.pdf" target="_blank">CV / Resume</a></li>
-    <li><a href="mailto:youremail@example.com">Email</a></li>
-  </ul>
+    <section class="about">
+      <p>
+        I build simple, reliable software and help teams ship faster.
+      </p>
+    </section>
+
+    <section class="links">
+      <ul>
+        <li><a href="https://github.com/Hardi5" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/hardikakalaw/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </section>
+
+    <section class="cta">
+      <!-- Only button shown (no visible email) -->
+      <a
+        class="button"
+        href="mailto:ladok.su@gmail.com?subject=Request%20for%20CV%20(from%20hardi5.github.io)&body=Hi%20Hardi%2C%0D%0A%0D%0AI%27d%20like%20to%20request%20your%20CV.%20Here%27s%20a%20bit%20about%20me%20and%20what%20I%27m%20looking%20for%3A%0D%0A-%20Name%3A%20%0D%0A-%20Company%3A%20%0D%0A-%20Role%2FProject%3A%20%0D%0A-%20Timeline%3A%20%0D%0A%0D%0AThanks!"
+        >Request my CV</a
+      >
+      <p class="hint">Click to send me an email with a pre-filled template.</p>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Hardi Kakalaw</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

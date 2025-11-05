@@ -15,7 +15,7 @@ body {
   color: #222;
 }
 
-/* Centered card layout */
+/* Center card */
 .card {
   max-width: var(--maxw);
   margin: 80px auto;
@@ -26,13 +26,14 @@ body {
   text-align: center;
 }
 
-/* Hero */
+/* Logo */
 .logo {
-  width: 80px;
-  height: auto;
+  max-height: 70px;   /* <— clean scaling */
+  width: auto;
   margin-bottom: 1rem;
 }
 
+/* Header text */
 .hero h1 {
   font-size: 2.2rem;
   margin-bottom: 0.35rem;
@@ -44,25 +45,21 @@ body {
   margin-bottom: 1.25rem;
 }
 
-/* Body copy */
+/* About */
 .about {
   margin: 1rem auto 1.5rem;
 }
 
+/* Skills */
 .skills h2 {
   font-size: 1.2rem;
   margin: 1.4rem 0 0.4rem;
 }
 
-.skills ul {
-  list-style: none;
-}
+.skills ul { list-style: none; }
+.skills li { margin: 0.25rem 0; }
 
-.skills li {
-  margin: 0.25rem 0;
-}
-
-/* Actions */
+/* Buttons */
 .actions {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -100,7 +97,7 @@ footer {
   font-size: 0.95rem;
 }
 
-/* Mobile adjustments */
+/* Mobile */
 @media (max-width: 420px) {
   .card { margin: 48px 16px; padding: 24px; }
   .hero h1 { font-size: 1.9rem; }
@@ -112,19 +109,14 @@ footer {
     background: #0b0d10;
     color: #e6e6e6;
   }
-
   .card {
     background: #111418;
     box-shadow: 0 10px 30px rgba(0,0,0,0.35);
   }
-
   .tagline { color: #b4b4b4; }
-
   .btn { border-color: #2a2f38; }
   .btn:hover { background: #141922; }
-
   .btn.primary { border-color: #6ea2ff; }
   .btn.primary:hover { background: #11203c; }
-
   footer { color: #a7a7a7; }
 }

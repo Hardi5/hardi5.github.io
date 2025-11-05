@@ -1,59 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Harding Consulting</title>
-  <link rel="icon" type="image/png" href="logo.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Independent IT Consultant — DevOps, Cloud & Security." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main class="card">
-    <header class="hero">
-      <div class="logo-wrap">
-        <img src="logo.png" alt="Harding Consulting logo" class="logo" />
-      </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Harding Consulting — DevOps, Cloud & Security</title>
+    <link rel="preload" as="style" href="styles.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <meta name="description" content="Independent IT consultant specializing in DevOps, cloud platforms, automation, and security." />
+  </head>
+  <body>
+    <main class="wrapper">
+      <header>
+        <img src="/logo.svg" alt="Harding Consulting logo" />
+        <h1>Harding Consulting</h1>
+        <p>Independent IT Consultant — DevOps, Cloud &amp; Security</p>
+      </header>
 
-      <h1>Harding Consulting</h1>
-      <p class="tagline">Independent IT Consultant — DevOps, Cloud & Security</p>
-    </header>
+      <section class="section">
+        <p>I help organizations design, build, and secure their infrastructure. My focus areas include DevOps, cloud platforms (AWS &amp; Azure), automation, and CI/CD. I emphasize maintainable, secure-by-default solutions and clear knowledge transfer.</p>
+      </section>
 
-    <section class="about">
+      <section class="section">
+        <h2>Core Skills</h2>
+        <ul>
+          <li><strong>Cloud:</strong> AWS, Azure, Cloudflare</li>
+          <li><strong>Automation:</strong> Terraform, Ansible, CI/CD (Jenkins, GitHub/GitLab CI)</li>
+          <li><strong>Containers &amp; Infra:</strong> Docker, Linux, Windows, networking</li>
+          <li><strong>Security:</strong> Hardening, secure configurations, network security</li>
+          <li><strong>Languages:</strong> Bash, Python • English &amp; Swedish</li>
+        </ul>
+      </section>
+
       <p>
-        I help organizations design, build, and secure their infrastructure.  
-        My focus areas include <strong>DevOps, cloud platforms (AWS & Azure), automation, and CI/CD</strong>.  
-        I emphasize <strong>maintainable, secure-by-default solutions</strong> and provide clear communication and knowledge transfer for lasting impact.
+        <a class="cta" href="mailto:hello@harding.consulting">Request my CV</a>
+        &nbsp; • &nbsp; <a href="https://github.com/yourhandle">GitHub</a>
+        &nbsp; • &nbsp; <a href="https://www.linkedin.com/in/yourhandle/">LinkedIn</a>
       </p>
-    </section>
 
-    <section class="skills">
-      <h2>Core Skills</h2>
-      <ul>
-        <li>Cloud: AWS, Azure, Cloudflare</li>
-        <li>Automation: Terraform, Ansible, CI/CD (Jenkins, GitHub/GitLab CI)</li>
-        <li>Containers & Infra: Docker, Linux, Windows, networking</li>
-        <li>Security: Hardening, secure configurations, network security</li>
-        <li>Languages: Bash, Python • English & Swedish</li>
-      </ul>
-    </section>
-
-    <nav class="actions">
-      <a class="btn" href="https://github.com/Hardi5" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/hardikakalaw/" target="_blank" rel="noopener">LinkedIn</a>
-      <a
-        class="btn primary"
-        href="mailto:ladok.su@gmail.com?subject=Request%20for%20CV%20(from%20hardi5.github.io)&body=Hi%20Hardi%2C%0D%0A%0D%0AI%27d%20like%20to%20request%20your%20CV.%20Here%27s%20a%20bit%20about%20me%20and%20what%20I%27m%20looking%20for%3A%0D%0A-%20Name%3A%20%0D%0A-%20Company%3A%20%0D%0A-%20Role%2FProject%3A%20%0D%0A-%20Timeline%3A%20%0D%0A%0D%0AThanks!"
-      >Request my CV</a>
-    </nav>
-
-    <footer>
-      <p>© <span id="year"></span> Harding Consulting</p>
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+      <footer>© Harding Consulting</footer>
+    </main>
+  </body>
 </html>

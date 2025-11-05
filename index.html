@@ -1,59 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Harding Consulting</title>
-  <link rel="icon" type="image/png" href="logo.png">
+  <meta charset="utf-8" />
+  <title>Harding Consulting – Cloud & DevOps</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Independent IT Consultant — DevOps, Cloud & Security." />
+  <meta name="description" content="Independent IT consultant helping teams with cloud infrastructure, DevOps automation, and secure operations." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="canonical" href="https://harding.consulting/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Harding Consulting – Cloud & DevOps" />
+  <meta property="og:description" content="Reliable infrastructure, automation, and systems support for teams of any size." />
+  <meta property="og:url" content="https://harding.consulting/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://harding.consulting/logo.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Harding Consulting – Cloud & DevOps" />
+  <meta name="twitter:description" content="Reliable infrastructure, automation, and systems support for teams of any size." />
+  <meta name="twitter:image" content="https://harding.consulting/logo.png" />
+
+  <meta name="theme-color" content="#0f172a" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="card">
     <header class="hero">
-      <div class="logo-wrap">
-        <img src="logo.png" alt="Harding Consulting logo" class="logo" />
+      <div class="logo-wrap" aria-hidden="true">
+        <img src="logo.png" alt="" class="logo" />
       </div>
-
       <h1>Harding Consulting</h1>
-      <p class="tagline">Independent IT Consultant — DevOps, Cloud & Security</p>
+      <p class="tagline">Cloud &amp; DevOps Infrastructure Consulting</p>
     </header>
 
     <section class="about">
       <p>
-        I help organizations design, build, and secure their infrastructure.  
-        My focus areas include <strong>DevOps, cloud platforms (AWS & Azure), automation, and CI/CD</strong>.  
-        I emphasize <strong>maintainable, secure-by-default solutions</strong> and provide clear communication and knowledge transfer for lasting impact.
+        I help organizations design, build, automate, and secure their IT infrastructure.
+        My work focuses on cloud platforms (AWS &amp; Azure), DevOps practices, and secure-by-default automation.
+        I deliver maintainable systems and provide clear knowledge transfer so your team can continue with confidence.
       </p>
     </section>
 
     <section class="skills">
-      <h2>Core Skills</h2>
+      <h2>Core Capabilities</h2>
       <ul>
-        <li>Cloud: AWS, Azure, Cloudflare</li>
-        <li>Automation: Terraform, Ansible, CI/CD (Jenkins, GitHub/GitLab CI)</li>
-        <li>Containers & Infra: Docker, Linux, Windows, networking</li>
-        <li>Security: Hardening, secure configurations, network security</li>
-        <li>Languages: Bash, Python</li>
+        <li><strong>Cloud Infrastructure:</strong> AWS, Azure, Cloudflare</li>
+        <li><strong>Automation &amp; CI/CD:</strong> Terraform, Ansible, Jenkins, GitHub/GitLab CI</li>
+        <li><strong>Systems &amp; Containers:</strong> Docker, Linux, Windows, networking</li>
+        <li><strong>Security:</strong> Hardening, secure configuration, network security</li>
+        <li><strong>Languages:</strong> Swedish &amp; English • Bash, Python</li>
+      </ul>
+    </section>
+
+    <section class="services">
+      <h2>What I Do</h2>
+      <ul>
+        <li>Set up and maintain cloud environments (AWS/Azure)</li>
+        <li>Build and automate deployment pipelines (CI/CD)</li>
+        <li>Manage servers, containers, and internal IT systems</li>
+        <li>Improve reliability, security, and performance</li>
+        <li>Hands-on support for operational IT needs</li>
       </ul>
     </section>
 
     <nav class="actions">
-      <a class="btn" href="https://github.com/Hardi5" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/hardikakalaw/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Hardi5" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/hardikakalaw/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a
         class="btn primary"
-        href="mailto:hardingconsulting@harding.consulting?subject=Request%20for%20CV%20(from%20hardi5.github.io)&body=Hi%20Hardi%2C%0D%0A%0D%0AI%27d%20like%20to%20request%20your%20CV.%20Here%27s%20a%20bit%20about%20me%20and%20what%20I%27m%20looking%20for%3A%0D%0A-%20Name%3A%20%0D%0A-%20Company%3A%20%0D%0A-%20Role%2FProject%3A%20%0D%0A-%20Timeline%3A%20%0D%0A%0D%0AThanks!"
+        href="mailto:hardi@harding.consulting?subject=Request%20for%20CV%20(from%20harding.consulting)&body=Hi%20Hardi%2C%0D%0A%0D%0AI%27d%20like%20to%20request%20your%20CV.%20Here%27s%20a%20bit%20about%20me%20and%20what%20I%27m%20looking%20for%3A%0D%0A-%20Name%3A%20%0D%0A-%20Company%3A%20%0D%0A-%20Role%2FProject%3A%20%0D%0A-%20Timeline%3A%20%0D%0A%0D%0AThanks!"
       >Request my CV</a>
     </nav>
 
     <footer>
-      <p>© <span id="year"></span> Harding Consulting</p>
+      <p>© <span id="year"></span> Harding Consulting • <a href="mailto:hardi@harding.consulting">hardi@harding.consulting</a></p>
     </footer>
   </main>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- Structured data for a tiny trust boost -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Harding Consulting",
+    "url": "https://harding.consulting/",
+    "image": "https://harding.consulting/logo.png",
+    "description": "Cloud & DevOps consulting: reliable infrastructure, automation, and systems support.",
+    "areaServed": "SE,EU,US",
+    "sameAs": [
+      "https://github.com/Hardi5",
+      "https://www.linkedin.com/in/hardikakalaw/"
+    ],
+    "email": "mailto:hardi@harding.consulting"
+  }
   </script>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

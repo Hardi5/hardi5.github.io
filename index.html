@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentinelForge - AI-Powered Cyber Range Platform</title>
+    <meta name="description" content="Train on real attacks, real defenses, real cloud. SentinelForge uses AI to generate infinite unique cyber scenarios on Google Cloud Platform.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Placeholder for icons if needed, though I'll use CSS shapes/SVG where possible or FontAwesome CDN if standard -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Sentinel<span class="highlight">Forge</span></div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#modes">Modes</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#scenarios">Scenarios</a>
+                <a href="#mindmap">Mind Map</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-primary">Request Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>AI-Driven Cyber Training on <span class="gradient-text">Real Cloud Infrastructure</span></h1>
+                <p class="lead">Train on real attacks, real defenses, real cloud. Eliminate the gap between training and reality with AI-generated environments on Google Cloud Platform.</p>
+                <div class="cta-group">
+                    <a href="#contact" class="btn btn-primary btn-lg">Request Demo</a>
+                    <a href="#" class="btn btn-secondary btn-lg">View Technical Docs</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="platform-illustration">
+                    <!-- Animated CSS representation of the platform -->
+                    <div class="orb red-orb"></div>
+                    <div class="orb blue-orb"></div>
+                    <div class="glass-card main-card">
+                        <div class="code-snippet">
+                            <span class="keyword">resource</span> <span class="string">"google_compute_instance"</span> <span class="variable">"vuln_vm"</span> {<br>
+                            &nbsp;&nbsp;name = <span class="string">"target-server"</span><br>
+                            &nbsp;&nbsp;machine_type = <span class="string">"e2-medium"</span><br>
+                            &nbsp;&nbsp;<span class="comment"># AI Generated Vulnerability</span><br>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Problem/Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="grid-2">
+                <div class="card problem-card">
+                    <h3>The Problem</h3>
+                    <p>Traditional cyber ranges rely on static simulations and fake networks. Scenarios become stale, memorized, and lack the complexity of modern cloud environments. Without guidance, learning stalls.</p>
+                </div>
+                <div class="card solution-card">
+                    <h3>The Solution</h3>
+                    <p>SentinelForge uses <strong>Scenario Architect AI</strong> to generate infinite unique scenarios on <strong>real Google Cloud Platform</strong> infrastructure. Specialized AI mentors guide you through every step, ensuring continuous learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. The Two Modes Section -->
+    <section id="modes" class="two-modes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Path</h2>
+                <p>Offensive or Defensive. Master both sides of the coin.</p>
+            </div>
+            
+            <div class="mode-tabs">
+                <button class="tab-btn active" data-tab="red-team">Red Team Mode</button>
+                <button class="tab-btn" data-tab="blue-team">Blue Team Mode</button>
+            </div>
+
+            <div class="mode-content active" id="red-team">
+                <div class="grid-2">
+                    <div class="mode-info">
+                        <h3 class="red-text"><i class="fas fa-skull-crossbones"></i> Offensive Security Training</h3>
+                        <p>Attack real vulnerable cloud environments generated just for you.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Misconfigured IAM & Cloud Storage</li>
+                            <li><i class="fas fa-check"></i> Container escapes in GKE</li>
+                            <li><i class="fas fa-check"></i> <strong>Hack Buddy AI</strong> coaches you on exploitation</li>
+                            <li><i class="fas fa-check"></i> Multi-stage attack chains</li>
+                        </ul>
+                    </div>
+                    <div class="mode-visual red-visual">
+                        <!-- Visual representation -->
+                        <div class="terminal-window">
+                            <div class="terminal-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                            <div class="terminal-body">
+                                <span class="prompt">$</span> ./exploit.sh target-vm<br>
+                                <span class="output">[+] Vulnerability detected: SSrf<br>
+                                [+] Hack Buddy Hint: Check the metadata service header...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mode-content" id="blue-team">
+                <div class="grid-2">
+                    <div class="mode-info">
+                        <h3 class="blue-text"><i class="fas fa-shield-alt"></i> SOC & Incident Response</h3>
+                        <p>Investigate real attacks using authentic GCP log sources.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Cloud Logging & Cloud Audit Logs</li>
+                            <li><i class="fas fa-check"></i> VPC Flow Logs analysis</li>
+                            <li><i class="fas fa-check"></i> <strong>SOC Buddy AI</strong> guides your investigation</li>
+                            <li><i class="fas fa-check"></i> Build attack timelines & IOCs</li>
+                        </ul>
+                    </div>
+                    <div class="mode-visual blue-visual">
+                         <div class="dashboard-window">
+                            <div class="dash-header">Log Explorer</div>
+                            <div class="log-entry warning">WARN: Failed password for root from 192.168.1.5</div>
+                            <div class="log-entry error">ERR: Sudo command execution detected</div>
+                            <div class="ai-hint"><i class="fas fa-robot"></i> SOC Buddy: Notice the timing correlation between these events.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. The Four AI Brains Section -->
+    <section class="ai-brains">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Four AI Brains</h2>
+                <p>A coordinated system of specialized AI agents powered by Vertex AI.</p>
+            </div>
+            <div class="brains-grid">
+                <div class="brain-card">
+                    <div class="icon"><i class="fas fa-network-wired"></i></div>
+                    <h4>Scenario Architect</h4>
+                    <p><strong>The World Builder.</strong> Generates Terraform, Ansible, and Kubernetes manifests to create unique, vulnerable infrastructure.</p>
+                </div>
+                <div class="brain-card">
+                    <div class="icon"><i class="fas fa-user-ninja"></i></div>
+                    <h4>Hack Buddy</h4>
+                    <p><strong>The Attack Coach.</strong> Monitors your offensive progress and provides adaptive hints without spoiling the challenge.</p>
+                </div>
+                <div class="brain-card">
+                    <div class="icon"><i class="fas fa-user-shield"></i></div>
+                    <h4>SOC Buddy</h4>
+                    <p><strong>The Defense Mentor.</strong> Guides log analysis and investigation, teaching you to think like a senior analyst.</p>
+                </div>
+                <div class="brain-card">
+                    <div class="icon"><i class="fas fa-tools"></i></div>
+                    <h4>Fix Mode</h4>
+                    <p><strong>The Remediation Engineer.</strong> Generates hardened IaC configurations and patches to fix discovered vulnerabilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Technical Architecture Section -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Architecture</h2>
+                <p>Built on Google Cloud Platform. Powered by Vertex AI. Deployed with Cloud Build.</p>
+            </div>
+            
+            <div class="architecture-diagram" id="arch-diagram">
+                <!-- Interactive CSS/SVG diagram will be injected here -->
+                <div class="diagram-container">
+                    <div class="arch-layer" id="layer-ui">
+                        <span class="label">Web UI & API (Cloud Run)</span>
+                    </div>
+                    <div class="arrow-down">⬇️</div>
+                    <div class="arch-layer" id="layer-orchestration">
+                        <span class="label">AI Orchestration (Vertex AI)</span>
+                    </div>
+                    <div class="arrow-down">⬇️</div>
+                    <div class="arch-layer" id="layer-build">
+                        <span class="label">Infrastructure Pipeline (Cloud Build)</span>
+                    </div>
+                    <div class="arrow-down">⬇️</div>
+                    <div class="arch-grid-gcp">
+                        <div class="gcp-service" data-tooltip="VM-based vulnerable hosts">Compute Engine</div>
+                        <div class="gcp-service" data-tooltip="Container orchestration labs">GKE</div>
+                        <div class="gcp-service" data-tooltip="Network segmentation">VPC</div>
+                        <div class="gcp-service" data-tooltip="Centralized logging">Cloud Logging</div>
+                        <div class="gcp-service" data-tooltip="Permission chains">IAM</div>
+                        <div class="gcp-service" data-tooltip="Scenario storage">Cloud Storage</div>
+                        <div class="gcp-service" data-tooltip="Database targets">Cloud SQL</div>
+                        <div class="gcp-service" data-tooltip="Network forensics">VPC Flow Logs</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-stack-highlights">
+                <span><i class="fab fa-google"></i> Google Cloud Platform</span>
+                <span><i class="fas fa-code"></i> Terraform</span>
+                <span><i class="fas fa-server"></i> Ansible</span>
+                <span><i class="fas fa-dharmachakra"></i> Kubernetes</span>
+                <span><i class="fas fa-brain"></i> Vertex AI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>From selection to deployment in minutes.</p>
+            </div>
+            <div class="timeline">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Select Scenario</h3>
+                    <p>Choose Red or Blue team path and difficulty level.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Generation</h3>
+                    <p>Scenario Architect writes unique IaC code.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Deployment</h3>
+                    <p>Cloud Build provisions real GCP resources (3-5 mins).</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Training</h3>
+                    <p>Engage with the environment, guided by AI mentors.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Cleanup</h3>
+                    <p>Automatic teardown and resource destruction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Real-World Scenarios Section -->
+    <section id="scenarios" class="scenarios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Real-World Scenarios</h2>
+                <p>Progress from single VM exploits to complex cluster compromises.</p>
+            </div>
+            <div class="scenario-grid">
+                <div class="scenario-card beginner">
+                    <div class="badge green">Beginner</div>
+                    <h3>Vulnerable Web Server</h3>
+                    <p>Exploit directory traversal, upload webshells, and escalate privileges on a single GCE instance.</p>
+                    <div class="tags">
+                        <span>Linux</span>
+                        <span>Apache</span>
+                        <span>SSH</span>
+                    </div>
+                </div>
+                <div class="scenario-card intermediate">
+                    <div class="badge yellow">Intermediate</div>
+                    <h3>Cloud Native Lateral Movement</h3>
+                    <p>Navigate IAM chains, abuse service accounts, and pivot from exposed buckets to Cloud SQL databases.</p>
+                    <div class="tags">
+                        <span>IAM</span>
+                        <span>Cloud Storage</span>
+                        <span>Lateral Movement</span>
+                    </div>
+                </div>
+                <div class="scenario-card advanced">
+                    <div class="badge red">Advanced</div>
+                    <h3>GKE Cluster Compromise</h3>
+                    <p>Escape privileged containers, access metadata service, and compromise an entire Kubernetes cluster.</p>
+                    <div class="tags">
+                        <span>Kubernetes</span>
+                        <span>Container Escape</span>
+                        <span>GCP Metadata</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mind Map Section -->
+    <section id="mindmap" class="mindmap-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interactive System Mind Map</h2>
+                <p>Explore the relationships between AI agents, Cloud Infrastructure, and Security Concepts.</p>
+            </div>
+            
+            <div class="mindmap-wrapper">
+                <div class="mindmap-controls">
+                     <button id="btn-hybrid" class="mode-btn active" data-mode="hybrid">HYBRID_VIEW</button>
+                     <button id="btn-red" class="mode-btn" data-mode="red">RED_TEAM</button>
+                     <button id="btn-blue" class="mode-btn" data-mode="blue">BLUE_TEAM</button>
+                </div>
+     
+                <div class="viz-area">
+                     <div id="viz-container">
+                         <!-- D3 Graph will be injected here -->
+                         <div class="viz-controls">
+                             <div class="instruction">DRAG NODES TO REARRANGE // CLICK TO INSPECT</div>
+                             <button id="reset-view">RESET_VIEW</button>
+                         </div>
+                     </div>
+     
+                     <aside id="detail-panel" class="hidden">
+                         <div class="panel-header">
+                             <h2 id="panel-title">NODE_TITLE</h2>
+                             <button id="close-panel" class="close-btn">×</button>
+                         </div>
+                         <div class="panel-content" id="panel-body">
+                             <!-- Dynamic content here -->
+                         </div>
+                         <div class="panel-footer">
+                             <div class="terminal-snippet">
+                                 <div class="terminal-header">COMMAND_PREVIEW</div>
+                                 <code id="cmd-preview">waiting_for_input...</code>
+                             </div>
+                         </div>
+                     </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Educational Value Section -->
+    <section class="education">
+        <div class="container">
+            <div class="grid-2">
+                <div class="content">
+                    <h2>Master Cloud Security</h2>
+                    <p>SentinelForge isn't just a game. It's a comprehensive training platform for modern security professionals.</p>
+                    <ul class="value-list">
+                        <li><strong>Offensive:</strong> Real methodology, cloud-native kill chains, persistence.</li>
+                        <li><strong>Defensive:</strong> Multi-source log correlation, threat hunting, IOC detection.</li>
+                        <li><strong>Infrastructure:</strong> Terraform hardening, secure architecture, IAM design.</li>
+                    </ul>
+                </div>
+                <div class="visual">
+                    <!-- Placeholder for skills chart/visual -->
+                    <div class="skills-chart">
+                        <div class="skill-bar" style="--width: 90%"><span>Cloud Penetration Testing</span></div>
+                        <div class="skill-bar" style="--width: 85%"><span>Incident Response</span></div>
+                        <div class="skill-bar" style="--width: 95%"><span>GCP Security</span></div>
+                        <div class="skill-bar" style="--width: 80%"><span>Kubernetes Security</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Technical Specs Highlights -->
+    <section class="specs-highlight">
+        <div class="container">
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h3>15+</h3>
+                    <p>GCP Services Integrated</p>
+                </div>
+                <div class="spec-item">
+                    <h3>4</h3>
+                    <p>Specialized AI Models</p>
+                </div>
+                <div class="spec-item">
+                    <h3>100%</h3>
+                    <p>Isolated Environments</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Auto</h3>
+                    <p>Cleanup & Cost Management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Roadmap Section -->
+    <section id="roadmap" class="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <h2>Roadmap</h2>
+                <p>Continuous innovation in AI-driven security training.</p>
+            </div>
+            <div class="roadmap-container">
+                <div class="phase active">
+                    <h3>Phase 1: Core Platform</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> GCP-focused scenarios</li>
+                        <li><i class="fas fa-check-circle"></i> Red/Blue Team Modes</li>
+                        <li><i class="fas fa-check-circle"></i> Linux Environments</li>
+                        <li><i class="fas fa-check-circle"></i> AI Mentorship</li>
+                    </ul>
+                </div>
+                <div class="phase">
+                    <h3>Phase 2: Expansion</h3>
+                    <ul>
+                        <li><i class="fas fa-circle-notch"></i> Windows Server Labs</li>
+                        <li><i class="fas fa-circle-notch"></i> Active Directory Scenarios</li>
+                        <li><i class="fas fa-circle-notch"></i> Hybrid Environments</li>
+                        <li><i class="fas fa-circle-notch"></i> Sysmon Integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Social Proof (Placeholder) -->
+    <section class="social-proof">
+        <div class="container">
+            <p class="trusted-by">Trusted by security teams at</p>
+            <div class="logos">
+                <span class="logo-placeholder">TechCorp</span>
+                <span class="logo-placeholder">SecureNet</span>
+                <span class="logo-placeholder">CloudSys</span>
+                <span class="logo-placeholder">CyberDef</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">How much does it cost?</button>
+                    <div class="accordion-content">
+                        <p>Pricing is based on lab usage time and complexity. Ephemeral infrastructure keeps costs predictable and significantly lower than maintaining permanent labs.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Do I need GCP experience?</button>
+                    <div class="accordion-content">
+                        <p>No. Scenarios scale from beginner to advanced. You learn cloud concepts as you go, guided by our AI mentors.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">What makes this different from other cyber ranges?</button>
+                    <div class="accordion-content">
+                        <p>SentinelForge generates real infrastructure on GCP, not simulations. Every scenario is unique, preventing memorization, and our AI mentors provide personalized guidance rather than static walkthroughs.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">How long does a lab take to deploy?</button>
+                    <div class="accordion-content">
+                        <p>Simple labs deploy in 2-3 minutes. Complex multi-VM scenarios take 5-7 minutes. All resources are automatically provisioned via Cloud Build.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">How does AI avoid giving away answers?</button>
+                    <div class="accordion-content">
+                        <p>Hack Buddy and SOC Buddy use a graduated hint system. They start with broad conceptual nudges and only get more specific if you're truly stuck, ensuring you learn the methodology.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. Call to Action Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <h2>Ready to Train on the Real Cloud?</h2>
+                <p>Join the next generation of cyber security professionals using AI-powered training.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-lg">Request Demo</a>
+                    <a href="#" class="btn btn-outline btn-lg">Join Waitlist</a>
+                </div>
+                <p class="small-text">Contact Sales for Enterprise Pricing</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SentinelForge. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Technical Specification</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

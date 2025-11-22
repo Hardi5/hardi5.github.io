@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Garden Log</title>
+    <style>
+        :root {
+            --primary-color: #2c5e2e;
+            --bg-color: #f4f7f4;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --border-color: #ddd;
+            --success-color: #27ae60;
+            --button-bg: #4a7c4a;
+            --button-hover: #3a633a;
+            --delete-bg: #c0392b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        /* Plot Cards Layout */
+        .plots-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .plots-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .plot-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .plot-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        /* Plant Visual */
+        .plant-visual {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .plant-icon {
+            font-size: 24px;
+        }
+        
+        .plant-text {
+            font-size: 0.95em;
+            color: #2e7d32;
+        }
+
+        /* Timer Section */
+        .timer-section {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+        }
+
+        .timer-display {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .status-display {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .status-growing {
+            color: #d35400;
+            background-color: #fae5d3;
+        }
+
+        .status-done {
+            color: var(--success-color);
+            background-color: #d4efdf;
+            font-weight: bold;
+        }
+
+        .add-minutes-control {
+            display: flex;
+            gap: 10px;
+        }
+
+        .minutes-input {
+            width: 60px !important;
+        }
+
+        button {
+            background-color: var(--button-bg);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: var(--button-hover);
+        }
+
+        .btn-add {
+            flex-grow: 1;
+        }
+
+        .btn-eaten {
+            width: 100%;
+            background-color: var(--primary-color);
+            padding: 12px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .btn-eaten:hover {
+            background-color: #1e4220;
+        }
+
+        /* Eaten Log */
+        .eaten-log-container {
+            margin-top: 20px;
+        }
+
+        .log-entry {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .log-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+            color: #666;
+            font-size: 0.85em;
+        }
+
+        .log-details div {
+            margin-bottom: 3px;
+        }
+
+        .empty-log {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+        }
+
+        .log-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        .log-section-header h2 {
+            margin: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+        }
+
+        .btn-clear {
+            background-color: var(--delete-bg);
+            font-size: 0.9em;
+            padding: 8px 15px;
+        }
+
+        .btn-clear:hover {
+            background-color: #a93226;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Mini Garden Log</h1>
+
+    <div id="plots-container" class="plots-container">
+        <!-- Plots will be generated here by JavaScript -->
+    </div>
+
+    <div class="log-section-header">
+        <h2>Eaten Log</h2>
+        <button class="btn-clear" onclick="clearEatenLog()">Clear Log</button>
+    </div>
+    <div id="eaten-log-list" class="eaten-log-container">
+        <!-- Log entries will appear here -->
+    </div>
+</div>
+
+<script>
+    // State Management
+    const STORAGE_KEY = 'miniGardenLogData';
+    const GOAL_MINUTES = 300;
+    
+    const defaultState = {
+        plots: [
+            { id: 1, sprout: '', started: '', totalMinutes: 0 },
+            { id: 2, sprout: '', started: '', totalMinutes: 0 },
+            { id: 3, sprout: '', started: '', totalMinutes: 0 }
+        ],
+        eatenLog: []
+    };
+
+    let appState = JSON.parse(JSON.stringify(defaultState));
+
+    // Initialization
+    function init() {
+        loadStateFromLocalStorage();
+        createPlotsStructure();
+        renderAllPlots();
+        renderEatenLog();
+    }
+
+    function loadStateFromLocalStorage() {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+            try {
+                const parsed = JSON.parse(stored);
+                // Basic Migration: if old 'minutes' exists, use it as 'totalMinutes'
+                if (parsed.plots) {
+                    appState.plots = parsed.plots.map((p, i) => ({
+                        id: p.id || (i + 1),
+                        sprout: p.sprout || '',
+                        started: p.started || '',
+                        totalMinutes: p.minutes !== undefined ? p.minutes : (p.totalMinutes || 0)
+                    }));
+                }
+                if (parsed.eatenLog) {
+                    appState.eatenLog = parsed.eatenLog;
+                }
+            } catch (e) {
+                console.error("Error loading data", e);
+                appState = JSON.parse(JSON.stringify(defaultState));
+            }
+        }
+    }
+
+    function saveStateToLocalStorage() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+    }
+
+    // Render Functions
+    function createPlotsStructure() {
+        const container = document.getElementById('plots-container');
+        container.innerHTML = '';
+
+        appState.plots.forEach((plot, index) => {
+            const card = document.createElement('div');
+            card.className = 'plot-card';
+            
+            card.innerHTML = `
+                <div class="plot-title">Plot ${plot.id}</div>
+                
+                <div class="plant-visual" id="plot${index}-visual">
+                    <!-- Visual content updated by JS -->
+                </div>
+
+                <div class="form-group">
+                    <label>Sprout</label>
+                    <input type="text" id="plot${index}-sprout" oninput="handleInput(${index}, 'sprout', this.value)">
+                </div>
+                
+                <div class="form-group">
+                    <label>Started</label>
+                    <input type="text" id="plot${index}-started" oninput="handleInput(${index}, 'started', this.value)" placeholder="e.g., 2023-10-27 10:00 AM">
+                </div>
+                
+                <div class="timer-section">
+                    <div class="timer-display" id="plot${index}-timer">Total Minutes: 0</div>
+                    <div class="status-display" id="plot${index}-status">Status: Growing (0 / 300 minutes)</div>
+                    
+                    <div class="add-minutes-control">
+                        <input type="number" id="plot${index}-add-mins" class="minutes-input" placeholder="Min">
+                        <button class="btn-add" onclick="addMinutes(${index})">Add Minutes</button>
+                    </div>
+                </div>
+
+                <button class="btn-eaten" onclick="eatPlot(${index})">Eaten</button>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    function renderAllPlots() {
+        appState.plots.forEach((_, index) => renderPlot(index));
+    }
+
+    function renderPlot(index) {
+        const plot = appState.plots[index];
+        
+        // Update Inputs
+        // Check active element to avoid overwriting while typing
+        const sproutInput = document.getElementById(`plot${index}-sprout`);
+        const startedInput = document.getElementById(`plot${index}-started`);
+        
+        if (document.activeElement !== sproutInput) {
+            sproutInput.value = plot.sprout;
+        }
+        if (document.activeElement !== startedInput) {
+            startedInput.value = plot.started;
+        }
+
+        // Update Visual
+        updateVisual(index);
+
+        // Update Timer & Status
+        const timerDisplay = document.getElementById(`plot${index}-timer`);
+        const statusDisplay = document.getElementById(`plot${index}-status`);
+        
+        timerDisplay.textContent = `Total Minutes: ${plot.totalMinutes}`;
+        
+        const isDone = plot.totalMinutes >= GOAL_MINUTES;
+        const statusText = isDone 
+            ? `Status: Done (${plot.totalMinutes} / ${GOAL_MINUTES} minutes)`
+            : `Status: Growing (${plot.totalMinutes} / ${GOAL_MINUTES} minutes)`;
+        
+        statusDisplay.textContent = statusText;
+        statusDisplay.className = `status-display ${isDone ? 'status-done' : 'status-growing'}`;
+    }
+
+    function updateVisual(index) {
+        const plot = appState.plots[index];
+        const visualContainer = document.getElementById(`plot${index}-visual`);
+        
+        if (plot.sprout || plot.started) {
+             visualContainer.innerHTML = `
+                <div class="plant-icon">🌱</div>
+                <div class="plant-text">
+                    <strong>${escapeHtml(plot.sprout || 'Unknown')}</strong> 
+                    ${plot.started ? `– Started: ${escapeHtml(plot.started)}` : ''}
+                </div>
+            `;
+        } else {
+            visualContainer.innerHTML = `
+                <div class="plant-icon" style="opacity:0.5">🌱</div>
+                <div class="plant-text" style="color:#888; font-style:italic;">
+                    No sprout yet – enter one above.
+                </div>
+            `;
+        }
+    }
+
+    function renderEatenLog() {
+        const container = document.getElementById('eaten-log-list');
+        container.innerHTML = '';
+
+        if (appState.eatenLog.length === 0) {
+            container.innerHTML = '<div class="empty-log">No eaten items yet.</div>';
+            return;
+        }
+
+        appState.eatenLog.forEach(entry => {
+            const div = document.createElement('div');
+            div.className = 'log-entry';
+            
+            // Legacy support for entries with 'note' or 'minutes'
+            const minutes = entry.totalMinutes !== undefined ? entry.totalMinutes : (entry.minutes || 0);
+            
+            div.innerHTML = `
+                <div class="log-header">
+                    <strong>${entry.plotName}</strong>
+                    <span>Eaten At: ${entry.eatenAt}</span>
+                </div>
+                <div class="log-details">
+                    <div><strong>Sprout:</strong> ${escapeHtml(entry.sprout)}</div>
+                    <div><strong>Started:</strong> ${escapeHtml(entry.started)}</div>
+                    <div><strong>Final Time:</strong> ${minutes} minutes</div>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+    }
+
+    // Logic Functions
+    function handleInput(index, field, value) {
+        appState.plots[index][field] = value;
+        saveStateToLocalStorage();
+        updateVisual(index);
+    }
+
+    function addMinutes(index) {
+        const input = document.getElementById(`plot${index}-add-mins`);
+        const amount = parseInt(input.value);
+
+        if (!isNaN(amount) && amount > 0) {
+            appState.plots[index].totalMinutes += amount;
+            input.value = '';
+            saveStateToLocalStorage();
+            renderPlot(index);
+        }
+    }
+
+    function eatPlot(index) {
+        const plot = appState.plots[index];
+        const now = new Date().toLocaleString();
+
+        const logEntry = {
+            plotName: `Plot ${plot.id}`,
+            sprout: plot.sprout,
+            started: plot.started,
+            totalMinutes: plot.totalMinutes,
+            eatenAt: now
+        };
+
+        appState.eatenLog.unshift(logEntry);
+
+        // Reset
+        appState.plots[index] = {
+            id: plot.id,
+            sprout: '',
+            started: '',
+            totalMinutes: 0
+        };
+
+        saveStateToLocalStorage();
+        renderPlot(index);
+        renderEatenLog();
+    }
+
+    function clearEatenLog() {
+        if (confirm('Are you sure you want to clear the eaten log?')) {
+            appState.eatenLog = [];
+            saveStateToLocalStorage();
+            renderEatenLog();
+        }
+    }
+
+    // Utility
+    function escapeHtml(text) {
+        if (!text) return '';
+        return text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+    // Run on load
+    window.onload = init;
+
+</script>
+
+</body>
+</html>
